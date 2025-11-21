@@ -1,0 +1,25 @@
+{
+	"rewrites": [{ "source": "/:pathinfo*", "destination": "index.html" }],
+	"github": {
+		"autoAlias": true,
+		"enabled": true,
+		"silent": true
+	},
+	"trailingSlash": false,
+	"public": false,
+	"headers": [],
+	"redirects": [
+	    {
+	      "source": "/download",
+	      "destination": "https://drive.google.com/drive/folders/1hp5ZHh2yA4eJqKr_E2miSLrJWW7EF9QP?usp=sharing"
+	    },
+	    {
+	      "source": "/design",
+	      "destination": "https://www.behance.net/gallery/138328471/Payout-Funding-Made-Easy"
+	    },
+	    {
+	      "source": "/branding",
+	      "destination": "https://www.behance.net/gallery/138328471/Payout-Funding-Made-Easy"
+	    }
+	]
+}
