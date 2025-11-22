@@ -6,9 +6,9 @@ require('dotenv').config()
 const allowedOrigins = [
     'http://localhost:8081',
     'http://localhost:3000',
-    'https://setu-front.vercel.app',
-    'https://setu-front-git-main-samarthpandeyys-projects.vercel.app',
-    'https://setu-front-samarthpandeyys-projects.vercel.app'
+    'https://de-v-brosss-a4cj.vercel.app/',
+    'https://de-v-brosss-a4cj.vercel.app/',
+    'https://de-v-brosss-a4cj.vercel.app/'
 ];
 
 app.use(cors({
@@ -101,3 +101,4 @@ function initial() {
 		}
 	})
 }
+
