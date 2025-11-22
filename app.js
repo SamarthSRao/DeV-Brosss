@@ -6,9 +6,7 @@ require('dotenv').config()
 const allowedOrigins = [
     'http://localhost:8081',
     'http://localhost:3000',
-    'https://de-v-brosss-a4cj.vercel.app/',
-    'https://de-v-brosss-a4cj.vercel.app/',
-    'https://de-v-brosss-a4cj.vercel.app/'
+    'https://de-v-brosss-2tsm.vercel.app/'
 ];
 
 app.use(cors({
@@ -101,4 +99,5 @@ function initial() {
 		}
 	})
 }
+
 
