@@ -1,15 +1,20 @@
 // Set base URL based on environment
 const isProduction = process.env.NODE_ENV === 'production';
-const baseRoute = isProduction 
-    ? 'https://de-v-brosss-a4cj.vercel.app/'  // Replace with your actual backend Vercel URL
-    : 'http://localhost:8081/api';
+let baseRoute = isProduction 
+    ? 'https://de-v-brosss-2tsm.vercel.app'  // Removed /api here
+    : 'http://localhost:8081';
 
-// For development with Vercel previews
+// For Vercel preview deployments
 if (typeof window !== 'undefined' && window.location.hostname !== 'localhost') {
-    baseRoute = 'https://de-v-brosss-a4cj.vercel.app/';
+    baseRoute = 'https://de-v-brosss-2tsm.vercel.app';  // Removed /api here
 }
 
+// Export the configuration
 export const baseStuff = {
-    baseRoute
+    baseRoute: baseRoute + '/api'  // Add /api here for API requests
 };
+
+// Log the base URL for debugging
+console.log('Base URL:', baseRoute);
+
 
