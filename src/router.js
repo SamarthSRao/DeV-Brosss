@@ -1,4 +1,5 @@
 import { createWebHistory, createRouter } from 'vue-router'
+import { baseStuff } from './plugins/base'
 import Home from './views/Home.vue'
 import Login from './views/Login.vue'
 import Register from './views/Register.vue'
@@ -101,8 +102,13 @@ const routes = [
 ]
 
 const router = createRouter({
-	history: createWebHistory(),
-	routes
+	history: createWebHistory(process.env.NODE_ENV === 'production' ? '/' : '/'),
+	base: process.env.NODE_ENV === 'production' ? '/' : '/',
+	routes,
+	scrollBehavior(to, from, savedPosition) {
+		// Always scroll to top when navigating to a new route
+		return { top: 0, behavior: 'smooth' }
+	}
 })
 
 // router.beforeEach((to, from, next) => {
@@ -120,3 +126,4 @@ const router = createRouter({
 // });
 
 export default router
+
