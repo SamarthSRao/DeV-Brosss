@@ -3,12 +3,27 @@ const cors = require('cors')
 const app = express()
 require('dotenv').config()
 
-var corsOptions = {
-	origin: 'http://localhost:8081'
-}
+const allowedOrigins = [
+    'http://localhost:8081',
+    'http://localhost:3000',
+    'https://setu-front.vercel.app',
+    'https://setu-front-git-main-samarthpandeyys-projects.vercel.app',
+    'https://setu-front-samarthpandeyys-projects.vercel.app'
+];
 
-// app.use(cors(corsOptions))
-app.use(cors())
+app.use(cors({
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        
+        if (allowedOrigins.indexOf(origin) === -1) {
+            const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true);
+    },
+    credentials: true
+}));
 
 // parse requests of content-type - application/json
 app.use(express.json())
